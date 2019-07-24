@@ -1,0 +1,33 @@
+<!-- {{jobId }} -->
+<div class="page-wrapper bg-dark p-t-100 p-b-50">
+    <div class="wrapper wrapper--w900">
+        <div class="card card-6">
+            <div class="card-heading">
+                <h2 class="title">التقديم على العمل</h2>
+            </div>
+            <div class="card-body">
+                <form  #porposal="ngForm" (submit)="onSubmit(porposal)">
+                    <div class="form-row">
+                        <div class="name">المبلغ المطلوب</div>
+                        <div class="value">
+                            <input type="number" style="direction: rtl" class="input--style-6" placeholder="المبلغ المطلوب" name="payment_amount" #payment_amount="ngModel" [(ngModel)]="porposal.payment_amount" >
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">الرسالة</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <textarea style="direction: rtl" class="textarea--style-6"  placeholder="الرسالة" name="freelancer_comment" #freelancer_comment="ngModel" [(ngModel)]="porposal.freelancer_comment"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn--radius-2 btn--blue-2" value="أرسال">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

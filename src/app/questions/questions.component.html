@@ -1,0 +1,60 @@
+
+<div class="jumbotron">
+  <h1 class="display-4 text-center">أضافة أسئلة</h1>
+  <hr>
+  <div class="row">
+    <!-------------- show Question---------------------------------------- -->
+    <div class="col-lg-7">
+      <table class="table table-hover" style="direction: rtl">
+      <tr>
+            <th>
+            رقم التسلسل
+            </th>
+             <th>
+             السؤال
+             </th>
+              <th>
+                الدرجة
+              </th>
+              <th>
+                  الأجابة
+              </th>
+              </tr>
+              <tr *ngFor="let item of listOfQuestionByTestLid">
+                <td>{{item.id}}</td>
+                <td>{{item.Question}}</td>
+                <td>{{item.degree}}</td>
+                <td>{{item.correctAnswer}}</td>
+              </tr>
+      </table>
+    </div>
+
+
+       <!-- -------------------------Add Question---------------------------------------- -->
+       <div class="col-lg-5">
+     <form #AddQuestion="ngForm" (submit)="addQuestion(AddQuestion)">
+
+
+      <label for="Question" style="float: right; direction: rtl;" >السؤال</label>
+       <textarea style="direction: rtl;" id="Question"name="Question"  #degree="ngModel" [(ngModel)]="AddQuestionBoj.Question" class="form-control" placeholder="أدخل السؤال">
+      </textarea>
+
+      <label style="float: right; direction: rtl;">الأجابة الصحيحة</label>
+      <br>
+      <div style="float: right">
+      <input style=" direction: rtl;" type="radio" name="correctAnswer" #correctAnswer="ngModel" [(ngModel)]="AddQuestionBoj.correctAnswer"  value=true> صح<br>
+      <input type="radio" name="correctAnswer"  #correctAnswer="ngModel" [(ngModel)]="AddQuestionBoj.correctAnswer"  value=false>خطأ<br>
+        </div>
+      <br>
+      <br>
+      <label  style="float: right; direction: rtl;" for="degree">الدرجة</label>
+      <input style="direction: rtl;" id="degree" type="number" name="degree" #degree="ngModel" [(ngModel)]="AddQuestionBoj.degree"class="form-control">
+      <br>
+      <input type="submit" class="btn btn-primary" style="float: right;color: white" value="اضافة سؤال" >
+     </form>
+       <!-----------------------------End of AddTest--------------------------------- -->
+
+   </div>
+  </div>
+
+  </div>

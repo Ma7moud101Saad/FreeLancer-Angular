@@ -1,0 +1,8 @@
+<div style="width: 40%; margin:0 auto; margin-top: 100px; margin-bottom: 30px; ">
+  <h1 style="text-align: center; margin-bottom: 30px;">أضف أختبار</h1>
+<form #AddTest="ngForm" (submit)="addTest(AddTest)">
+
+  <input style="margin-bottom: 30px; direction: rtl" type="text" name="test_name" class="form-control" #test_name="ngModel" [(ngModel)]="test.test_name">
+  <input style="margin-bottom: 30px;" type="submit" class="btn btn-primary"  value="أضف أختبار" >
+  </form>
+  <div>

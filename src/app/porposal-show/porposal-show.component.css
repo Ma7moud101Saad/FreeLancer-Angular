@@ -1,0 +1,35 @@
+.row
+{
+padding-top: 40px !important;
+  min-height: 455px;
+  box-shadow: 0px 0px 3px gray;
+  padding: 0;
+  background-color: #F0F0F0;
+
+
+}
+.prim{
+  color: #428BCA;
+  clear: both;
+  font-size: 20px;
+}
+h4{
+  color: grey;
+}
+.Skill{
+  border: 1px solid #D7D9DA;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+  color: #606368;
+  font-size: 16px;
+}
+.porposalShow
+{
+  box-shadow: 0px 0px 3px gray;
+  background-color: #fff;
+  margin-top: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.btn-outline-danger:hover{color: white !important;}

@@ -1,0 +1,27 @@
+<app-content-header></app-content-header>
+<!-- <h1>{{userId}}</h1> -->
+<section class="ftco-section ftco-counter">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section text-center ">
+        <span class="subheading ">اقسام العمل </span>
+        <h2 class="mb-4"> الوظائف المتوفره<span>حاليا</span></h2>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-3 " *ngFor="let item of catogries">
+      <ul class="category text-right " >
+         <li>
+           <a  (click)="routId(item.ID)">
+            {{item.CatName}}
+            <span class="number" data-number="8000">0</span>
+           </a>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+

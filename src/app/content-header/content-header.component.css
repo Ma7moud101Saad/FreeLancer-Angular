@@ -1,0 +1,29 @@
+.cent{ margin: 0 auto; padding-top: 250px;}
+.cent h1{float: right; font-size: 60px; color: #FFFFFF; margin-bottom: 40px;}
+#basic-addon2{background-color: #5DD28E; color: #fff; font-size: 26px;}
+#basic-addon2:hover{cursor: pointer;}
+
+
+/*Extra Small devices (landscape phones, 576px and up)*/
+@media (min-width: 300px) {
+  .cent h1{ font-size: 20px; color: black; text-align: center; margin-bottom: 20px;}
+}
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {
+  .cent h1{float: right; font-size: 30px; color: #FFFFFF; margin-bottom: 30px;}
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .cent h1{float: right; font-size: 40px; color: #FFFFFF; margin-bottom: 40px;}
+ }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .cent h1{float: right; font-size: 50px; color: #FFFFFF; margin-bottom: 40px;}
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}

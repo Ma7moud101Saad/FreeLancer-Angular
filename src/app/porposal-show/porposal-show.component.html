@@ -1,0 +1,41 @@
+<app-content-header></app-content-header>
+<div class="container-fluid">
+<div class="row"  >
+      <div class="col-lg-7 col-md-8 col-sm-12 col-xs-12" >
+
+        <h1 style="text-align: center">التقديمات على هذة الوظيفة</h1>
+
+        <div class="porposalShow" *ngFor="let item of porposalWithName">
+          <h4 style="direction: rtl; float:right; color: #202837;" >{{item.userName}}</h4>
+
+          <span style="float: right; margin-right:10px">{{item.Email}}</span>
+          <h5 >{{item.PaymentAmount}} LEV</h5>
+          <br>
+          <p style="direction: rtl; float:right; color: #3F4047;" >{{item.porposal}}</p>
+          <br>
+        </div>
+
+      </div>
+      <div class="col-lg-5 col-md-4 col-sm-12 col-xs-12" style=" direction: rtl; float:right; text-align: justify ;">
+         <div class="porposal" >
+          <h3>تفاصيل العمل</h3>
+
+          <h4>أسم العمل : </h4>
+            <span class="prim">{{job.JopName}}</span>
+          <h4>وصف تفصيلى عن الوظيفة : </h4>
+            <span class="prim">{{job.Description}}</span>
+
+            <h4>التاريخ : </h4>
+          <span class="prim">{{job.JobDate}}</span>
+          <br>
+          <br>
+          <h3>المهارات المطلوبة لتئدية هذا العمل  : </h3>
+          <span class="Skill"  *ngFor="let item of OtherSkillsList">{{item.skill_name}}</span>
+          <br>
+          <button type="button" style="color: #007BFF ; margin-top: 20px;margin-bottom: 20px;" (click)="goToAddPorposal(job.ID)" class="btn btn-outline-danger">قدم على العمل</button>
+
+        </div>
+
+    </div>
+  </div>
+</div>

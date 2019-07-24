@@ -1,0 +1,11 @@
+<div style="width: 20%; margin:0 auto; margin-top: 100px;">
+  <h1 style="text-align: center;">حدد المجال الذى تريد الحصول على شهادة فيه</h1>
+<form style="margin-top: 30px;margin-bottom:100px;" #choseTest="ngForm" (submit)="goToTest(choseTest)">
+    <select style="margin-bottom: 30px;" id="test"name="id"  #id="ngModel" [(ngModel)]="test.id" class="form-control"><!--ngModel map ID (submit)=functionNam(form)-->
+        <option *ngFor="let item of ListOfTeses " [value]="item.id">
+            {{item.test_name}}
+          </option>
+    </select>
+    <input type="submit" class="btn btn-primary" style="color: white" value="أذهب للأختبار" >
+    </form>
+  </div>

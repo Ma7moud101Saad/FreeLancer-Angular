@@ -1,0 +1,36 @@
+    <section style="margin-top: 100px;">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ">
+          	<span class="subheading" style="margin-top: 40px;">احدث الوظائف المضافه</span>
+            <h2 class="mb-4"><span>احدث </span> الوظائف</h2>
+          </div>
+        </div>
+				<div class="row">
+					<div class="col-md-12 " *ngFor="let item of job  | paginate: { itemsPerPage: 4, currentPage: p }" >
+
+            <div class="job-post-item bg-white p-4 d-block d-md-flex align-items-center">
+
+
+
+              <div class="mr-auto d-flex ">
+
+                <button (click)="GOtoPorposal(item.ID)" class="btn btn-primary py-2 mr-1">الالتحاق بالعمل</button>
+              </div>
+              <div class="mb-4 mb-md-0 mr-5">
+                <div class="job-post-item-header d-flex align-items-center">
+
+                  <h2 class="ml-auto text-black h3 mt-1 ml-3">{{item.JopName}}</h2>
+                </div>
+                <div class="job-post-item-body d-block d-md-flex">
+                  <div> <span> {{item.Description}}</span><span class="icon-my_location"></span></div>
+                  <div class="mr-2"> <a href="#">{{item.JobDate |date:"longDate"}}</a><span class="icon-layers"></span></div>
+                </div>
+              </div>
+            </div>
+          </div><!-- end -->
+        </div>
+      </div>
+      <pagination-controls  class="text-center" (pageChange)="p = $event"></pagination-controls>
+          </section>
+

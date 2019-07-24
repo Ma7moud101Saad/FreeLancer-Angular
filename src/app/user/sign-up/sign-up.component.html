@@ -1,0 +1,58 @@
+<div class="col-12 ">
+    <div class="card p-5">
+        <div class="jumbotron-fluid center">
+            <h2 style="direction: ltr">انشاء حساب</h2>
+        </div>
+        <form class="col-sm-12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+
+            <div class="row">
+                <div class="input-field col-sm-6">
+                    <label>الاسم الاول</label>
+                    <input class="form-control" type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="user.FirstName">
+                </div>
+
+                <div class="input-field col-sm-6">
+                    <label>الاسم الاخير</label>
+                    <input class="form-control" type="text" name="LastName" #LastName="ngModel" [(ngModel)]="user.LastName">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col-sm-6">
+                    <label data-error="Required field!">تاكيد الرقم السري</label>
+                    <input class="validate form-control" type="text" name="ConfirmPassword" #ConfirmPassword="ngModel" [(ngModel)]="user.ConfirmPassword" required>
+                </div>
+                <div class="input-field col-sm-6">
+                    <label [attr.data-error]="Password.errors!=null?(Password.errors.Required?'Required field!':'Minimum 3 characters needed'):''">الرقم السري</label>
+                    <input class="validate form-control" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.Password" required="Required" minlength="3">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col-sm-6">
+                    <label data-error="Invalid email!">البريد الالكتروني</label>
+                    <input class="validate form-control" type="email" name="Email" #Email="ngModel" [(ngModel)]="user.Email" ngModel>
+
+                </div>
+                <div class="input-field col-sm-6">
+                    <label data-error="Invalid PhoneNumber!"> رقم التليفون</label>
+
+                    <input class="validate form-control" type="text" name="PhoneNumber" #PhoneNumber="ngModel" [(ngModel)]="user.PhoneNumber" ngModel pattern="^[0-9]{11}$">
+
+                </div>
+            </div>
+            <br>
+            <!-- <div class="row" *ngIf="roles">
+                  <ul>
+                      <li *ngFor="let item of roles;let i = index">
+                          <input type="checkbox" [id]="'roles-'+i" value="{{item.Id}}" [checked]="item.selected" (change)="updateSelectedRoles(i)">
+                          <label [for]="'roles-'+i">{{item.Name}}</label>
+                      </li>
+                  </ul>
+              </div> -->
+            <div class="row">
+                <div class="input-field col-12">
+                    <button [disabled]="!userRegistrationForm.valid" class="btn btn-primary form-control" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

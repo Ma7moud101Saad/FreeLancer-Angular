@@ -1,0 +1,47 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col s8 offset-2">
+      <div class="card-panel teal lighten-2">
+        <h4 class="center white-text">Category Image</h4>
+      </div>
+      <form #imageForm="ngForm" (ngSubmit)="OnSubmit(imageForm)">
+        <div class="row">
+          <div class="form-group col s12">
+            <label for="Caption">اسم القسم</label>
+            <input
+              class="form-control"
+              type="text"
+              #Caption="ngModel"
+              [(ngModel)]="selectedCategory.CatName"
+              name="Caption"
+              id="Caption"
+              value="{{ selectedCategory.CatName }}"
+              required
+            />
+          </div>
+        </div>
+        <img
+          src="http://localhost:51835/Content/Image/{{
+            selectedCategory.ImageName
+          }}"
+          alt="Image Not Valid"
+          width="250px"
+          height="200px"
+        />
+        <div class="custom-file">
+          <input
+            type="file"
+            #Image="ngModel"
+            accept="image/*"
+            [(ngModel)]="value"
+            (change)="handleFileUpload($event.target.files)"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">
+          حفظ
+          <i class="fas fa-save    "></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100 p-t-85 p-b-20">
+        <form class="login100-form validate-form" #Free="ngForm" (submit)="onSubmit(Free)" >
+          <span class="login100-form-title p-b-70">
+            عامل حر
+          </span>
+          <span class="login100-form-avatar">
+            <img src="assets/FormsStyles/images/avatar-01.jpg" alt="AVATAR">
+          </span>
+
+          <div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "وصف تفصيلى">
+            <textarea style="direction: rtl;" class="input100"   name="OverView" #OverView="ngModel" [(ngModel)]="freeLanc.OverView"></textarea>
+            <span class="focus-input100" data-placeholder="وصف"></span>
+          </div>
+
+
+
+
+            <div  style="margin-bottom: 10px;" >
+               <select  class="form-control" style="direction:rtl"  name="Location"  #Location="ngModel" [(ngModel)]="freeLanc.Location" >
+                 <option [value]="city" *ngFor = "let city of city_names"  >{{city}}</option>
+               </select>
+               </div>
+
+
+          <div class="container-login100-form-btn">
+            <input type="submit" class="login100-form-btn" value="تسجيل">
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="dropDownSelect1"></div>

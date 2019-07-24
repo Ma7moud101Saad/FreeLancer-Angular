@@ -1,0 +1,58 @@
+<!-- <nav>
+  <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">
+          <i class="material-icons">cloud</i> Shenouda Emad</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li *ngIf="userService.roleMatch(['Admin'])">
+              <a routerLink="/adminPanel">Admin Panel</a>
+          </li>
+          <li>
+              <a (click)="Logout()">Logout</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+<div class="row" *ngIf="userClaims">
+  <div class="col s12 m7">
+      <div class="card">
+          <div class="card-content">
+
+              <span>Email : {{userClaims.Email}}</span>
+              <br>
+              <span>Full Name : {{userClaims.FirstName}} {{userClaims.LastName}}</span>
+              <br>
+              <span>Logged On : {{userClaims.LoggedOn}}</span>
+          </div>
+      </div>
+  </div>
+</div> -->
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active"  >بوابة العمل</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a [routerLink]="['/home']" routerLinkActive="router-link-active" class="nav-link">الصفحة الرئيسية</a></li>
+        <li class="nav-item"><a [routerLink]="['/home/AboutUs']" routerLinkActive="router-link-active"   class="nav-link">معلومات عنا</a></li>
+
+        <li class="nav-item"><a [routerLink]="['/home/contactUs']" routerLinkActive="router-link-active"  class="nav-link">أتصل بنا</a></li>
+        <li class="nav-item active"><a (click)="goToTest()" routerLinkActive="router-link-active" class="nav-link">اختبارات</a></li>
+        <li class="nav-item cta mr-md-2"><a (click)="goToHireManagerForm()" class="nav-link" style="cursor: pointer">أضف وظيفة</a></li>
+        <li class="nav-item cta mr-md-2 cta-colored"><a (click)="goToFreeLancerForm()" class="nav-link" style="cursor: pointer">أطلب وظيفة</a></li>
+        <li class="nav-item cta mr-md-2 "  ><a (click)="goToCompanyForm()" class="nav-link" style="cursor: pointer">تسجيل شركة</a></li>
+        <li  class="nav-item" *ngIf="userService.roleMatch(['Admin'])" >
+          <a routerLink="/adminPanel" class="nav-link" style="cursor: pointer"> شاشة الادمن</a>
+      </li>
+      <li  class="nav-item" >
+          <a (click)="Logout()" class="nav-link" style="cursor: pointer">تسجيل خروج</a>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- <app-header></app-header> -->
+<router-outlet></router-outlet>
+<app-footer></app-footer>

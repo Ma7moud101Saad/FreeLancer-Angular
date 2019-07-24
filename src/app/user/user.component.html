@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="card col-12 text-center bg-secondary align-content-center justify-content-center">
+            <div class="card-tabs">
+                <ul class="nav nav-tabs card-header-tabs  row">
+                    <li class="nav-item col">
+                        <a routerLink='/login' class="btn form-control active" routerLinkActive='active'>Sign In</a>
+                    </li>
+                    <li class="nav-item col">
+                        <a routerLink='/signup' class="btn form-control " routerLinkActive='active'>Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+
+                <router-outlet></router-outlet>
+
+            </div>
+        </div>
+    </div>
+</div>

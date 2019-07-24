@@ -1,0 +1,47 @@
+<div class="container" style="margin-top: 100px;">
+  <div class="row">
+    <div class="col s8 offset-2">
+      <div class="card-panel mb-3" style="text-align: center">
+        <h4 class="center white-text">اضافه قسم جديد</h4>
+      </div>
+      <form #imageForm="ngForm" (ngSubmit)="OnSubmit(Caption, Image)">
+        <!-- <div class="row"> -->
+        <div class="form-group">
+          <!-- <label for="Caption">القسم</label> -->
+          <input
+            class="form-control"
+            type="text"
+            #Caption
+            ngModel
+            name="Caption"
+            id="Caption"
+            required
+            placeholder="اسم القسم"
+          />
+        </div>
+        <!-- </div> -->
+        <img [src]="imageUrl" alt="" width="250px" height="200px" />
+        <div class="custom-file">
+          <input
+            class="custom-file-input"
+            type="file"
+            #Image
+            accept="image/*"
+            (change)="handleFileUpload($event.target.files)"
+          />
+          <label class="custom-file-label left" for="customFile"
+            >اختيار صوره</label
+          >
+          <br />
+        </div>
+        <button
+          type="submit"
+          [disabled]="Image.value == '' || !imageForm.valid"
+          class="btn btn-primary mx-auto d-block mt-2 w-25"
+        >
+          حفظ
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

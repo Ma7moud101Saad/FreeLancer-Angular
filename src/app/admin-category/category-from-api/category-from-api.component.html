@@ -1,0 +1,56 @@
+<div style="text-align: center;">
+<h3 style="text-align: center;margin-top: 100px;">الاقسام</h3>
+
+<a
+  [routerLink]="['/adminPanel/addcategory']"
+  routerLinkActive="router-link-active"
+  class="btn btn-primary mb-3"
+  >اضافه <i class="fa fa-plus" aria-hidden="true"></i>
+</a>
+
+<table style="direction: rtl;width: 80%; margin: 0 auto;"
+  class="table table-hover  table-bordered shadow p-3 mb-5 bg-white rounded"
+>
+  <thead>
+    <th>الرقم</th>
+    <th>اسماء الاقسام</th>
+    <th>صوره القسم</th>
+    <th>تعديل القسم</th>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let item of categoryList | paginate: { itemsPerPage: 5, currentPage: p }
+      "
+    >
+      <td>{{ item.ID }}</td>
+      <td>{{ item.CatName }}</td>
+      <td>
+        <img
+          src="http://localhost:51835/Content/Image/{{ item.ImageName }}"
+          alt="{{ item.ID }}"
+          width="100"
+          height="70"
+        />
+      </td>
+      <td>
+        <a class="btn btn-dark" routerLink="/adminPanel/caregory/{{ item.ID }}"
+          >تعديل القسم <i class="fas fa-edit"></i>
+        </a>
+      </td>
+      <!-- <td>
+        <a
+          routerLink="/allcategory"
+          (click)="Delete(item.ID)"
+          class="btn btn-danger"
+        >
+          مسح القسم
+        </a>
+      </td> -->
+    </tr>
+
+
+  </tbody>
+</table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

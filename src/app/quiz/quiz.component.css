@@ -1,0 +1,10 @@
+.Quiz{
+
+  width: 80%;
+  height: auto;
+  padding: 40px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 5px;
+  color: black;
+}

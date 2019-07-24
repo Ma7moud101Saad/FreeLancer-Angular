@@ -1,0 +1,42 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100 p-t-85 p-b-20">
+      <form class="login100-form validate-form" #Hire="ngForm" (submit)="onSubmit(Hire)">
+        <span class="login100-form-title p-b-70">
+          مدير
+        </span>
+        <span class="login100-form-avatar" style="margin-bottom: 10px;">
+          <img src="assets/FormsStyles/images/HireManager.png" alt="AVATAR">
+        </span>
+
+        <label style="margin-top: 20px;" for="">موقعك</label>
+        <div id="countryselect" style="margin-bottom: 10px;" >
+          <select  class="form-control" style="direction:rtl" id="sel" name="location" #location="ngModel" [(ngModel)]="HireMang.location">
+            <option [value]="city" *ngFor = "let city of city_names" >{{city}}</option>
+          </select>
+
+          </div>
+
+          <label style="margin-top: 20px;" for="">أسم الشركة</label>
+          <div id="countryselect" style="margin-bottom: 10px;" >
+             <select  class="form-control" style="direction:rtl" id="sel" name="companyObjID" #companyObjID="ngModel" [(ngModel)]="HireMang.companyObjID">
+               <option [value]="comapy.ID" *ngFor = "let comapy of Companies" >{{comapy.CompanyName}}</option>
+             </select>
+
+             </div>
+
+
+        <div class="container-login100-form-btn">
+          <button class="login100-form-btn">
+            تسجيل
+          </button>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>
